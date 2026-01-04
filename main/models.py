@@ -45,7 +45,7 @@ class Product(models.Model):
          description = models.TextField(blank=True)
          main_image = models.ImageField(upload_to='products/main/')
          created_at = models.DateTimeField(auto_now_add=True)
-         upated_at = models.DateTimeField(auto_now=True)
+         updated_at = models.DateTimeField(auto_now=True)
 
 
          
@@ -65,8 +65,8 @@ class ProductImage(models.Model):
                                    related_name='images')
        image = models.ImageField(upload_to='products/extra/')
 
-       
-         
+# при создании объекта ProductImage он должен ссылаться на существующий объект Product, потому ты использовал ForeignKey
+#он обьязан это сделать
 
        
 
